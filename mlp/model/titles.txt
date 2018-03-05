@@ -1,0 +1,96 @@
+1 - Model : input = 37
+			dense(50, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adam - learning rate = 0.001
+	Loss = mean absolute error
+	epochs = 300
+
+2 - Model : input = 37
+			dense(50, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adam - learning rate = 0.001
+	Loss = mean squared error
+	epochs = 100
+
+3 - Model : input = 37
+			dense(50, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adam - learning rate = 0.005
+	Loss = mean squared error
+	epochs = 1000
+
+	mse ~= 0.0623
+
+	Conseguia virar para ambos os lados. Alguns problemas em situações novas
+
+4 - Model : input = 37
+			dense(50, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adamax - learning rate = 0.002
+	Loss = mean squared error
+	epochs = 100
+
+	mse ~= 0.0535
+
+	Consegue virar muito bem para a direita, e tem problemas para virar para esquerda. Bate em parede ao chegar perto. Reduz muito a acelerecao. Conseguia fazer a pista oval a esquerda. Não conseguia fazer nenhuma curva para direita
+
+5 - Model : input = 37
+			dense(50, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adamax - learning rate = 0.01 decay = 1e-6
+	Loss = mean squared error
+	epochs = 1000
+
+	mse ~= 0.0520
+
+	Tende a reduzir a acelerecao em diversos lugares.
+	Nao anda na pista oval.
+	Bate seguido nas paredes.
+
+6 - Model : input = 37
+			dense(37, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adamax - learning rate = 0.002
+	Loss = mean squared error
+	epochs = 200
+
+	mse ~= 0.0533
+
+	Tende a reduzir a acelerecao perto de paredes
+	Nao anda na pista oval.
+	Bate seguido nas paredes.
+
+
+7 - Model : input = 37
+			dense(200, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adamax - learning rate = 0.002
+	Loss = mean squared error
+	epochs = 200
+
+	mse ~= 0.0452
+
+	Aceleracao muito negativa
+	Nao anda na pista oval.
+	Bate seguido nas paredes.
+	Nada bom
+
+8 - Model : input = 37
+			dense(37, he_normal, relu)
+			dense(100, he_normal, relu)
+			ouput(4, he_normal, tanh)
+			
+	Optimizer: adamax - learning rate = 0.002
+	Loss = mean squared error
+	epochs = 300
+
+	mse ~= 0.0427
+
+
